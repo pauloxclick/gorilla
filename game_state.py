@@ -58,6 +58,10 @@ victory_delay_start_time = 0
 VICTORY_SOUND_DELAY_MS = 700 # Atraso de 700 milissegundos (0.7 segundos)
 winner = 0 # 0: Ninguém, 1: Jogador 1, 2: Jogador 2
 
+# Placar
+player1_score = 0
+player2_score = 0
+
 # Estado da Banana
 banana_active = False
 banana_x = 0.0
@@ -71,9 +75,9 @@ BUILDINGS = []
 
 # Caminhos para os arquivos de som (relativos à raiz do projeto, as sumindo que main.py está em gorilla_game)
 # Ajuste os nomes dos arquivos se os seus forem diferentes.
-SOUND_FILE_THROW = "gorilla_game/assets/sounds/throw.wav"
-SOUND_FILE_EXPLOSION = "gorilla_game/assets/sounds/explosion.wav"
-SOUND_FILE_VICTORY = "gorilla_game/assets/sounds/victory.wav"
+SOUND_FILE_THROW = "assets/sounds/throw.wav"
+SOUND_FILE_EXPLOSION = "assets/sounds/explosion.wav"
+SOUND_FILE_VICTORY = "assets/sounds/victory.wav"
 
 # Variáveis para armazenar os objetos de som carregados
 sound_throw = None
@@ -81,9 +85,9 @@ sound_explosion = None
 sound_victory = None
 
 # Caminhos para os arquivos de imagem
-IMAGE_FILE_GORILLA = "gorilla_game/assets/images/gorilla.png"
-IMAGE_FILE_BANANA = "gorilla_game/assets/images/banana.png"
-IMAGE_FILE_EXPLOSION = "gorilla_game/assets/images/explosion.png" # Carregaremos, mas não usaremos ainda
+IMAGE_FILE_GORILLA = "assets/images/gorilla.png"
+IMAGE_FILE_BANANA = "assets/images/banana.png"
+IMAGE_FILE_EXPLOSION = "assets/images/explosion.png" # Carregaremos, mas não usaremos ainda
 
 # Variáveis para armazenar os objetos de imagem carregados
 gorilla_image = None

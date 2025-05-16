@@ -101,6 +101,20 @@ def draw_input_ui(screen):
         screen.blit(text_player, (10, 10))
         screen.blit(text_angle, (10, 30))
         screen.blit(text_force, (10, 50))
+
+def draw_scores(screen):
+    """Desenha o placar de vitórias dos jogadores."""
+    if not UI_FONT:
+        return
+
+    score_text = f"{game_state.player1_score} | {game_state.player2_score}"
+    text_surface_score = UI_FONT.render(score_text, True, game_state.BLACK)
+
+    # Centraliza o placar no topo da tela
+    score_rect = text_surface_score.get_rect(centerx=game_state.SCREEN_WIDTH // 2, top=10)
+    screen.blit(text_surface_score, score_rect)
+
+
 def draw_banana(screen):
     """Desenha a banana se ela estiver ativa."""
     if game_state.banana_active and game_state.banana_image:
