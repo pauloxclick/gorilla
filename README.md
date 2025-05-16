@@ -13,7 +13,7 @@ Os jogadores se revezam atirando bananas em prédios, tentando acertar o gorila 
     ```
 3.  **Navegar até o diretório do projeto:**
     ```bash
-    cd /home/master/projects/
+    cd ~/games/
     ```
 4.  **Executar o jogo:**
     ```bash
