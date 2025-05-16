@@ -53,7 +53,7 @@ def main():
         game_state.gorilla_image_flipped = pygame.transform.flip(game_state.gorilla_image, True, False) # Espelha horizontalmente
 
         # Banana (vamos definir um tamanho fixo para a banana por enquanto)
-        banana_width, banana_height = 15, 15 # Ajuste conforme necessário
+        banana_width, banana_height = 20, 20 # Aumentado o tamanho da banana
         path_banana = os.path.join(BASE_DIR, game_state.IMAGE_FILE_BANANA)
         print(f"Attempting to load image: {path_banana}")
         loaded_banana_img = pygame.image.load(path_banana).convert_alpha()

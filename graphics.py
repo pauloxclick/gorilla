@@ -7,11 +7,25 @@ UI_FONT = None
 
 def draw_sky(screen):
     """Desenha o céu."""
-    screen.fill(game_state.BLUE_SKY)
+    # Desenha um gradiente do topo (escuro) para o horizonte (claro)
+    for y in range(game_state.SCREEN_HEIGHT):
+        # Calcula a interpolação entre as cores
+        # t = 0 no topo (y=0), t = 1 no horizonte (y=SCREEN_HEIGHT)
+        t = y / game_state.SCREEN_HEIGHT
+        r = int(game_state.SKY_COLOR_TOP[0] * (1 - t) + game_state.SKY_COLOR_HORIZON[0] * t)
+        g = int(game_state.SKY_COLOR_TOP[1] * (1 - t) + game_state.SKY_COLOR_HORIZON[1] * t)
+        b = int(game_state.SKY_COLOR_TOP[2] * (1 - t) + game_state.SKY_COLOR_HORIZON[2] * t)
+        pygame.draw.line(screen, (r, g, b), (0, y), (game_state.SCREEN_WIDTH, y))
+
+
 
 def draw_ground(screen):
     """Desenha o chão."""
     pygame.draw.rect(screen, game_state.GREEN_GRASS, (0, game_state.SCREEN_HEIGHT - game_state.GROUND_HEIGHT, game_state.SCREEN_WIDTH, game_state.GROUND_HEIGHT))
+
+def draw_sun(screen):
+    """Desenha o sol no céu."""
+    pygame.draw.circle(screen, game_state.SUN_COLOR, (game_state.SUN_POS_X, game_state.SUN_POS_Y), game_state.SUN_RADIUS)
 
 def draw_buildings(screen):
     """Desenha os prédios."""
@@ -68,7 +82,8 @@ def draw_gorilla(screen, player_number, position):
 def draw_scene(screen):
     """Desenha todos os elementos da cena."""
     draw_sky(screen)
-    draw_buildings(screen) 
+    draw_sun(screen) # Desenha o sol depois do céu e antes dos prédios
+    draw_buildings(screen)
     draw_ground(screen) 
 
     # Desenha os gorilas em suas posições calculadas nos prédios
@@ -171,7 +186,9 @@ def draw_title_screen(screen):
     if not UI_FONT:
         return
 
-    screen.fill(game_state.BLUE_SKY) # Fundo azul como o céu
+    # Usa as novas funções para desenhar o céu e o sol
+    draw_sky(screen)
+    draw_sun(screen)
 
     # Fonte maior para o título principal "GORILLA"
     big_title_font_size = 74

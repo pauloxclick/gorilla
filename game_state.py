@@ -6,11 +6,21 @@ SCREEN_HEIGHT = 600
 # Cores (RGB)
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-BLUE_SKY = (135, 206, 235)
+
+# Cores do Cenário
+SKY_COLOR_TOP = (0, 0, 100)       # Azul escuro para o topo do céu (noite/crepúsculo)
+SKY_COLOR_HORIZON = (135, 206, 235) # Azul claro para o horizonte
+SUN_COLOR = (255, 255, 0)         # Amarelo para o sol
+
 GREEN_GRASS = (34, 139, 34)
 GRAY_BUILDING = (128, 128, 128)
 BROWN_GORILLA = (139, 69, 19)
 YELLOW_BANANA = (255, 255, 0)
+
+# Propriedades do Sol
+SUN_RADIUS = 40
+SUN_POS_X = 100 # Posição X do centro do sol
+SUN_POS_Y = 100 # Posição Y do centro do sol
 
 # Paleta de cores para os prédios
 BUILDING_COLORS = [
